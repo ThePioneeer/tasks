@@ -19,4 +19,8 @@ class Task {
         
         return $this->_data;
     }
+
+    public function delete($id){
+        $this->_db->delete("tasks", array("id", "=", $id));
+    }
 }

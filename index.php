@@ -41,12 +41,18 @@ $tasks = $task->get();
                 <div class="panel-body">
                     <table class="table table-striped">
                         <thead>
-                            <th>Task</th>
+                            <th>Tasks</th>
                         </thead>
                         <tbody>
                             <?php foreach($tasks as $t): ?>
                                 <tr>
                                     <td><?php echo $t->name?></td>
+                                    <td>
+                                        <form action="delete.php" method="post">
+                                            <input type="hidden" name="id" value="<?php echo $t->id ?>">
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
