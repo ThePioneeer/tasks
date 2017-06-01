@@ -1,16 +1,16 @@
 <?php
-class Input{
+class Input {
     public static function exists($type = "post"){
         switch ($type) {
-            case 'post':
+            case "post":
                 return (!empty($_POST)) ? true : false;
-                break;
-            case 'get':
+            break;
+            case "get":
                 return (!empty($_GET)) ? true : false;
-                break;
+            break;
             default:
                 return false;
-                break;
+            break;
         }
     }
 
