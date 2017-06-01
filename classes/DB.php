@@ -72,6 +72,10 @@ class DB {
         return $this->action("SELECT *", $table, $where);
     }
 
+    public function selectAll($table){
+        return $this->action("SELECT *", $table, array("id", ">", "0"));
+    }
+
     public function delete($table, $where){
         return $this->action("DELETE", $table, $where);
     }

@@ -1,3 +1,10 @@
+<?php
+require_once "core/init.php";
+
+$task = new Task();
+$tasks = $task->get();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,6 +33,27 @@
                     </form>
                 </div>
             </div>
+            <?php if($tasks): ?>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Current tasks
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <th>Task</th>
+                        </thead>
+                        <tbody>
+                            <?php foreach($tasks as $t): ?>
+                                <tr>
+                                    <td><?php echo $t->name?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <?php endif; ?>
         </div>
     </body>
 </html>
